@@ -16,8 +16,9 @@ function load() {
 load();
 
 function getJsonData() {
-  $.getJSON("project.json", function (jd) {
-    console.log(jd.ip);
+  $.getJSON("/app data/t7online/user/properties.json", function (jd) {
+
+    $("#jsonUser").text(jd.playerName);
   });
 }
 getJsonData();

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+
+    <title>BOIII</title>
+
+    <style>
+        * {
+            user-select: none;
+            -ms-user-select: none;
+            cursor: default;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            -ms-overflow-style: none;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI Light", "Segoe UI", "Lucida Sans", Arial, sans-serif;
+            font-style: normal;
+            font-weight: lighter;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+
+        }
+
+        body {
+            background: transparent;
+        }
+
+        .background-container {
+            inset: 0;
+            position: fixed;
+            z-index: -1;
+        }
+
+            .background-container:before {
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                content: "";
+                height: 100%;
+                opacity: 0.25;
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+
+            .background-container:after {
+                background-image: url(./noise.jpg);
+                background-repeat: repeat;
+                content: "";
+                height: 100%;
+                mix-blend-mode: overlay;
+                opacity: 0.025;
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .content {
+            width: 100%;
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        div.button {
+            margin: 5px 10px 15px;
+            display: inline-block;
+            border: 1px solid #44413f;
+            color: rgba(244, 240, 235, 0.776);
+            cursor: pointer;
+            background-color: rgb(42, 40, 39);
+            width: 120px;
+            text-align: center;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.1s linear;
+            font-size: 1rem;
+            font-weight: normal;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        }
+
+            div.button:hover {
+                background-color: rgb(48, 45, 44);
+                border: 1px solid #4a4745;
+            }
+
+        h1,
+        h1 * {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        }
+
+        P {
+            margin: 175px 10px 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        }
+
+
+        /*  BUTTONS  */
+        .btn {
+            width: 15rem;
+            height: 4rem;
+            border-radius: 1rem;
+            box-shadow: $shadow;
+            justify-self: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: .3s ease;
+            &__primary
+
+        {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+            background: var(--primary);
+            box-shadow: inset .2rem .2rem 1rem var(--primary-light), inset -.2rem -.2rem 1rem var(--primary-dark), $shadow;
+            color: var(--greyLight-1);
+            &:hover
+
+        {
+            color: var(--white);
+        }
+
+        &:active {
+            box-shadow: inset .2rem .2rem 1rem var(--primary-dark), inset -.2rem -.2rem 1rem var(--primary-light);
+        }
+
+        }
+
+        &__secondary {
+            grid-column: 1 / 2;
+            grid-row: 5 / 6;
+            color: var(--greyDark);
+            &:hover
+
+        {
+            color: var(--primary);
+        }
+
+        &:active {
+            box-shadow: $inner-shadow;
+        }
+
+        }
+
+        p {
+            font-size: 1.6rem;
+        }
+
+        }
+
+    </style>
+
+
+
+    </style>
+</head>
+
+  <body>
+    <div class="background-container"></div>
+
+    <div class="content">
+
+        <!---
+                <h1>
+            <span style="color: #5216f9">T7</span>
+
+            <span style="color: hsl(130, 79%, 51%)">O</span>
+            <span style="color: hsl(130, 79%, 51%)">N</span>
+            <span style="color: hsl(130, 79%, 51%)">L</span>
+            <span style="color: hsl(130, 79%, 51%)">I</span>
+            <span style="color: hsl(130, 79%, 51%)">N</span>
+            <span style="color: hsl(130, 79%, 51%)">E</span>
+
+          </h1>
+
+    -->
+
+        <div class="btn btn__primary" onclick="window.external.runGame()">Play< ><p>play test 2</p> </div>
+        <div class="btn btn__secondary"><p>Button</p></div>
+
+
+
+
+        <div class="button" onclick="window.external.runGame()">Play</div>
+        <div class="button" onclick="window.external.openUrl('')">Discord</div>
+
+
+        <!---
+        <p>THE REVIVAL OF BLACK OPS 3</p>
+      </div>
+
+    --->
+        <script>
+            window.onload = function () { };
+
+            document.onkeydown = fkey;
+            document.onkeypress = fkey;
+            document.onkeyup = fkey;
+
+            function fkey(e) {
+                e = e || window.event;
+
+                location.reload();
+            }
+
+
+            /*  rate slider */
+            const container = document.querySelector('.slider__box');
+            const btn = document.querySelector('.slider__btn');
+            const color = document.querySelector('.slider__color');
+            const tooltip = document.querySelector('.slider__tooltip');
+
+        </script>
+</body>
+</html>
